@@ -1,7 +1,6 @@
 package com.example.demo_project.service.impl;
 
 import org.springframework.stereotype.Service;
-
 import com.example.demo_project.entity.Person;
 import com.example.demo_project.service.ifs.PersonService;
 
@@ -15,6 +14,7 @@ public class PersonServiceImpl implements PersonService {
 		per.setName(name);
 		per.setAge(age);
 		per.setCity(city);
+
 		return per;
 	}
 	
