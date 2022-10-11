@@ -14,9 +14,9 @@ public class OrderServiceImpl2 implements OrderService2 {
 	int totalPrice;
 
 	@Override
-	public void setMenuNamePrice(Menu mapMenu) {
-		listMenu.put(mapMenu.getName(), mapMenu.getPrice());
-		System.out.println(mapMenu.getName() + " PRICE: " + mapMenu.getPrice());
+	public void setMenuNamePrice(Menu menu) {
+		listMenu.put(menu.getName(), menu.getPrice());
+		System.out.println(menu.getName() + " PRICE: " + menu.getPrice());
 	}
 
 	@Override
