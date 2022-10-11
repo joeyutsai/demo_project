@@ -6,17 +6,17 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import com.example.demo_project.entity.Menu;
-import com.example.demo_project.service.ifs.OrderService;
+import com.example.demo_project.service.ifs.OrderService2;
 
 @Service
-public class OrderServiceImpl implements OrderService {
+public class OrderServiceImpl2 implements OrderService2 {
 	private Map<String, Integer> listMenu = new HashMap<String, Integer>();
 	int totalPrice;
 
 	@Override
-	public void setMenuNamePrice(String nameMenu, int priceMenu) {
-		listMenu.put(nameMenu, priceMenu);
-		System.out.println(nameMenu + " PRICE: " + priceMenu); 
+	public void setMenuNamePrice(Menu mapMenu) {
+		listMenu.put(mapMenu.getName(), mapMenu.getPrice());
+		System.out.println(mapMenu.getName() + " PRICE: " + mapMenu.getPrice());
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public void getAllPrice() {
+	public void getAllInfo() {
 		if (totalPrice > 500) {
 			totalPrice = (int) (totalPrice * (0.9));
 			System.out.println("Discount: 10% OFF !!!");
