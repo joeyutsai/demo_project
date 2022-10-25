@@ -30,6 +30,7 @@ public class ShoppingServiceTest {
 		List<String> serchProduct = new ArrayList<>(); 
 		serchProduct.add("shirt");
 		serchProduct.add("jacket");
+		serchProduct.add("wallet");
 		serchProduct.add("shoes");
 		shoppingService.queryProducts(serchProduct, listProduct);
 		System.out.println();

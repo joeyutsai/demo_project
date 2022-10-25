@@ -14,12 +14,12 @@ public class ShoppingServiceImpl implements ShoppingService {
 	public void queryProducts(List<String> nameList, List<Product> productList) {
 		for (int i = 0; i < nameList.size(); i++) {
 			for (int j = 0; j < productList.size(); j++) {
-				if (nameList.get(i) == productList.get(j).getName()) {
+				if (nameList.get(i).equalsIgnoreCase((productList.get(j).getName()))) {
 					System.out.println("PRODUCT: " + productList.get(j).getName() + ", PRICE: $"
 							+ productList.get(j).getPrice() + ", STORAGE: " + productList.get(j).getStorage());
 					break;
 				} else if (j == (productList.size() - 1)) {
-					System.out.println("Sorry! We don't have " + nameList.get(i) + " product.");
+					System.out.println("Sorry! We don't have " + nameList.get(i) + ".");
 				}
 			}
 		}

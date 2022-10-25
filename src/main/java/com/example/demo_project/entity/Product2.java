@@ -1,23 +1,22 @@
 package com.example.demo_project.entity;
 
-public class Menu {
-	private String name;
-	private int price;
-	private int quantity;
+import javax.swing.Spring;
 
-	public Menu() {
+public class Product2 {
+	String name;
+	int price;
+	int quantity;
+	int storage;
 
-	}
+	public Product2() {
 
-	public Menu(String name, int price) {
-		this.name = name;
-		this.price = price;
 	}
 	
-	public Menu(String name, int price, int quantity) {
+	public Product2(String name, int price, int quantity, int storage) {
 		this.name = name;
 		this.price = price;
 		this.quantity = quantity;
+		this.storage = storage;
 	}
 
 	public String getName() {
@@ -44,4 +43,13 @@ public class Menu {
 		this.quantity = quantity;
 	}
 
+	public int getStorage() {
+		return storage;
+	}
+
+	public void setStorage(int storage) {
+		this.storage = storage;
+	}
+	
+	
 }

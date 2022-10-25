@@ -1,23 +1,19 @@
-package com.example.demo_project.entity;
+package com.example.demo_project.vo;
 
-public class Menu {
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class OrderReq {
+	@JsonProperty("name")
 	private String name;
+	
+	@JsonProperty("price")
 	private int price;
+	
+	@JsonProperty("quantity")
 	private int quantity;
 
-	public Menu() {
+	public OrderReq() {
 
-	}
-
-	public Menu(String name, int price) {
-		this.name = name;
-		this.price = price;
-	}
-	
-	public Menu(String name, int price, int quantity) {
-		this.name = name;
-		this.price = price;
-		this.quantity = quantity;
 	}
 
 	public String getName() {
