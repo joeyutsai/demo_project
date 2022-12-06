@@ -1,17 +1,21 @@
 package com.example.demo_project.vo;
 
-import com.example.demo_project.entity.Bank;
-import com.fasterxml.jackson.annotation.JsonInclude;
-
 public class BankRes {
-	@JsonInclude(JsonInclude.Include.NON_NULL)
 	
+
 	private String acount;
+	
 	private int amount;
+	
 	private String message;
 
 	public BankRes() {
 
+	}
+	
+	public BankRes(String acount, int amount) {
+		this.setAcount(acount);
+		this.setAmount(amount);
 	}
 
 	public String getAcount() {

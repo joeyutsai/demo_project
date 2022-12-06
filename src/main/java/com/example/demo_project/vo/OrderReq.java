@@ -3,17 +3,28 @@ package com.example.demo_project.vo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class OrderReq {
-	@JsonProperty("name")
+//	@JsonProperty("name")
 	private String name;
 	
-	@JsonProperty("price")
+//	@JsonProperty("price")
 	private int price;
 	
-	@JsonProperty("quantity")
+//	@JsonProperty("quantity")
 	private int quantity;
 
 	public OrderReq() {
 
+	}
+	
+	public OrderReq(String name, int price) {
+		this.name = name;
+		this.price = price;
+	}
+	
+	public OrderReq(String name, int price, int quantity) {
+		this.name = name;
+		this.price = price;
+		this.quantity = quantity;
 	}
 
 	public String getName() {

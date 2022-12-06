@@ -1,0 +1,196 @@
+14:58:58.976 INFO  [main][DemoProjectApplication.logStarting(StartupInfoLogger.java:55)] Starting DemoProjectApplication using Java 17.0.4.1 on YuTsaide-MacBook-Pro.local with PID 1045 (/Users/yu/eclipse-workspace/demo_project/bin/main started by yu in /Users/yu/eclipse-workspace/demo_project)
+14:58:58.980 INFO  [main][DemoProjectApplication.logStartupProfileInfo(SpringApplication.java:645)] No active profile set, falling back to 1 default profile: "default"
+14:59:00.118 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:132)] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+14:59:00.233 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:201)] Finished Spring Data repository scanning in 99 ms. Found 8 JPA repository interfaces.
+14:59:00.891 INFO  [main][TomcatWebServer.initialize(TomcatWebServer.java:108)] Tomcat initialized with port(s): 8080 (http)
+14:59:00.917 INFO  [main][Http11NioProtocol.log(DirectJDKLog.java:173)] Initializing ProtocolHandler ["http-nio-8080"]
+14:59:00.918 INFO  [main][StandardService.log(DirectJDKLog.java:173)] Starting service [Tomcat]
+14:59:00.918 INFO  [main][StandardEngine.log(DirectJDKLog.java:173)] Starting Servlet engine: [Apache Tomcat/9.0.65]
+14:59:01.074 INFO  [main][[/].log(DirectJDKLog.java:173)] Initializing Spring embedded WebApplicationContext
+14:59:01.074 INFO  [main][ServletWebServerApplicationContext.prepareWebApplicationContext(ServletWebServerApplicationContext.java:290)] Root WebApplicationContext: initialization completed in 2004 ms
+14:59:01.193 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:110)] HikariPool-1 - Starting...
+14:59:01.400 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:123)] HikariPool-1 - Start completed.
+14:59:01.573 INFO  [main][LogHelper.logPersistenceUnitInformation(LogHelper.java:31)] HHH000204: Processing PersistenceUnitInfo [name: default]
+14:59:01.636 INFO  [main][Version.logVersion(Version.java:44)] HHH000412: Hibernate ORM core version 5.6.11.Final
+14:59:01.842 INFO  [main][Version.<clinit>(JavaReflectionManager.java:56)] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+14:59:01.998 INFO  [main][Dialect.<init>(Dialect.java:175)] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+14:59:02.258 WARN  [main][RootClass.checkCompositeIdentifier(RootClass.java:287)] HHH000038: Composite-id class does not override equals(): com.example.demo_project.entity.OrgCompanyId
+14:59:02.259 WARN  [main][RootClass.checkCompositeIdentifier(RootClass.java:290)] HHH000039: Composite-id class does not override hashCode(): com.example.demo_project.entity.OrgCompanyId
+14:59:02.622 INFO  [main][JtaPlatformInitiator.initiateService(JtaPlatformInitiator.java:52)] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+14:59:02.633 INFO  [main][LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:437)] Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:59:03.283 WARN  [main][JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor(JpaBaseConfiguration.java:219)] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:59:03.436 INFO  [main][PropertySourcedRequestMappingHandlerMapping.initHandlerMethods(PropertySourcedRequestMappingHandlerMapping.java:69)] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+14:59:03.673 INFO  [main][Http11NioProtocol.log(DirectJDKLog.java:173)] Starting ProtocolHandler ["http-nio-8080"]
+14:59:03.692 INFO  [main][TomcatWebServer.start(TomcatWebServer.java:220)] Tomcat started on port(s): 8080 (http) with context path ''
+14:59:03.693 INFO  [main][DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160)] Context refreshed
+14:59:03.715 INFO  [main][DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163)] Found 1 custom documentation plugin(s)
+14:59:03.743 INFO  [main][ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41)] Scanning for api listing references
+14:59:03.927 INFO  [main][CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)] Generating unique operation named: saveUsingPOST_1
+14:59:03.945 INFO  [main][DemoProjectApplication.logStarted(StartupInfoLogger.java:61)] Started DemoProjectApplication in 10.496 seconds (JVM running for 11.349)
+15:01:04.072 INFO  [http-nio-8080-exec-1][[/].log(DirectJDKLog.java:173)] Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:01:04.074 INFO  [http-nio-8080-exec-1][DispatcherServlet.initServletBean(FrameworkServlet.java:525)] Initializing Servlet 'dispatcherServlet'
+15:01:04.085 INFO  [http-nio-8080-exec-1][DispatcherServlet.initServletBean(FrameworkServlet.java:547)] Completed initialization in 11 ms
+15:21:55.292 WARN  [HikariPool-1 housekeeper][HikariPool.run(HikariPool.java:788)] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m23s739ms).
+15:21:58.512 INFO  [SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean.destroy(AbstractEntityManagerFactoryBean.java:651)] Closing JPA EntityManagerFactory for persistence unit 'default'
+15:21:58.515 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:350)] HikariPool-1 - Shutdown initiated...
+15:21:58.527 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:352)] HikariPool-1 - Shutdown completed.
+15:22:16.477 INFO  [main][DemoProjectApplication.logStarting(StartupInfoLogger.java:55)] Starting DemoProjectApplication using Java 17.0.4.1 on YuTsaide-MacBook-Pro.local with PID 1105 (/Users/yu/eclipse-workspace/demo_project/bin/main started by yu in /Users/yu/eclipse-workspace/demo_project)
+15:22:16.481 INFO  [main][DemoProjectApplication.logStartupProfileInfo(SpringApplication.java:645)] No active profile set, falling back to 1 default profile: "default"
+15:22:17.413 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:132)] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:22:17.546 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:201)] Finished Spring Data repository scanning in 105 ms. Found 8 JPA repository interfaces.
+15:22:18.225 INFO  [main][TomcatWebServer.initialize(TomcatWebServer.java:108)] Tomcat initialized with port(s): 8080 (http)
+15:22:18.239 INFO  [main][Http11NioProtocol.log(DirectJDKLog.java:173)] Initializing ProtocolHandler ["http-nio-8080"]
+15:22:18.240 INFO  [main][StandardService.log(DirectJDKLog.java:173)] Starting service [Tomcat]
+15:22:18.240 INFO  [main][StandardEngine.log(DirectJDKLog.java:173)] Starting Servlet engine: [Apache Tomcat/9.0.65]
+15:22:18.364 INFO  [main][[/].log(DirectJDKLog.java:173)] Initializing Spring embedded WebApplicationContext
+15:22:18.364 INFO  [main][ServletWebServerApplicationContext.prepareWebApplicationContext(ServletWebServerApplicationContext.java:290)] Root WebApplicationContext: initialization completed in 1802 ms
+15:22:18.468 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:110)] HikariPool-1 - Starting...
+15:22:18.658 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:123)] HikariPool-1 - Start completed.
+15:22:18.810 INFO  [main][LogHelper.logPersistenceUnitInformation(LogHelper.java:31)] HHH000204: Processing PersistenceUnitInfo [name: default]
+15:22:18.862 INFO  [main][Version.logVersion(Version.java:44)] HHH000412: Hibernate ORM core version 5.6.11.Final
+15:22:19.053 INFO  [main][Version.<clinit>(JavaReflectionManager.java:56)] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:22:19.170 INFO  [main][Dialect.<init>(Dialect.java:175)] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+15:22:19.415 WARN  [main][RootClass.checkCompositeIdentifier(RootClass.java:287)] HHH000038: Composite-id class does not override equals(): com.example.demo_project.entity.OrgCompanyId
+15:22:19.415 WARN  [main][RootClass.checkCompositeIdentifier(RootClass.java:290)] HHH000039: Composite-id class does not override hashCode(): com.example.demo_project.entity.OrgCompanyId
+15:22:19.760 INFO  [main][JtaPlatformInitiator.initiateService(JtaPlatformInitiator.java:52)] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:22:19.768 INFO  [main][LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:437)] Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:22:20.436 WARN  [main][JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor(JpaBaseConfiguration.java:219)] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:22:20.583 INFO  [main][PropertySourcedRequestMappingHandlerMapping.initHandlerMethods(PropertySourcedRequestMappingHandlerMapping.java:69)] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+15:22:20.826 INFO  [main][Http11NioProtocol.log(DirectJDKLog.java:173)] Starting ProtocolHandler ["http-nio-8080"]
+15:22:20.844 INFO  [main][TomcatWebServer.start(TomcatWebServer.java:220)] Tomcat started on port(s): 8080 (http) with context path ''
+15:22:20.845 INFO  [main][DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160)] Context refreshed
+15:22:20.867 INFO  [main][DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163)] Found 1 custom documentation plugin(s)
+15:22:20.884 INFO  [main][ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41)] Scanning for api listing references
+15:22:21.066 INFO  [main][CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)] Generating unique operation named: saveUsingPOST_1
+15:22:21.083 INFO  [main][DemoProjectApplication.logStarted(StartupInfoLogger.java:61)] Started DemoProjectApplication in 10.023 seconds (JVM running for 10.942)
+15:22:25.010 INFO  [http-nio-8080-exec-2][[/].log(DirectJDKLog.java:173)] Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:22:25.010 INFO  [http-nio-8080-exec-2][DispatcherServlet.initServletBean(FrameworkServlet.java:525)] Initializing Servlet 'dispatcherServlet'
+15:22:25.014 INFO  [http-nio-8080-exec-2][DispatcherServlet.initServletBean(FrameworkServlet.java:547)] Completed initialization in 3 ms
+15:25:35.358 WARN  [HikariPool-1 housekeeper][HikariPool.run(HikariPool.java:788)] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46s571ms).
+15:32:47.661 WARN  [HikariPool-1 housekeeper][HikariPool.run(HikariPool.java:788)] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m42s252ms).
+15:35:20.147 INFO  [http-nio-8080-exec-4][Http11Processor.log(DirectJDKLog.java:175)] Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000xf30x010x000x000xef0x030x030xf70x000x160xd76]0x960x1b0xf6J0xcd0xa1s0x83/0xc3~0x18Z%0x9e0xa40xaa0x8a(0xb60x9d0x1euX0xec0x8e ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+15:55:46.516 INFO  [SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean.destroy(AbstractEntityManagerFactoryBean.java:651)] Closing JPA EntityManagerFactory for persistence unit 'default'
+15:55:46.522 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:350)] HikariPool-1 - Shutdown initiated...
+15:55:46.526 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:352)] HikariPool-1 - Shutdown completed.
+15:59:19.675 INFO  [main][DemoProjectApplication.logStarting(StartupInfoLogger.java:55)] Starting DemoProjectApplication using Java 17.0.4.1 on YuTsaide-MacBook-Pro.local with PID 1242 (/Users/yu/eclipse-workspace/demo_project/bin/main started by yu in /Users/yu/eclipse-workspace/demo_project)
+15:59:19.682 INFO  [main][DemoProjectApplication.logStartupProfileInfo(SpringApplication.java:645)] No active profile set, falling back to 1 default profile: "default"
+15:59:20.638 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:132)] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:59:20.735 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:201)] Finished Spring Data repository scanning in 81 ms. Found 8 JPA repository interfaces.
+15:59:21.422 INFO  [main][TomcatWebServer.initialize(TomcatWebServer.java:108)] Tomcat initialized with port(s): 8080 (http)
+15:59:21.433 INFO  [main][Http11NioProtocol.log(DirectJDKLog.java:173)] Initializing ProtocolHandler ["http-nio-8080"]
+15:59:21.435 INFO  [main][StandardService.log(DirectJDKLog.java:173)] Starting service [Tomcat]
+15:59:21.435 INFO  [main][StandardEngine.log(DirectJDKLog.java:173)] Starting Servlet engine: [Apache Tomcat/9.0.65]
+15:59:21.551 INFO  [main][[/].log(DirectJDKLog.java:173)] Initializing Spring embedded WebApplicationContext
+15:59:21.552 INFO  [main][ServletWebServerApplicationContext.prepareWebApplicationContext(ServletWebServerApplicationContext.java:290)] Root WebApplicationContext: initialization completed in 1790 ms
+15:59:21.651 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:110)] HikariPool-1 - Starting...
+15:59:21.836 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:123)] HikariPool-1 - Start completed.
+15:59:22.001 INFO  [main][LogHelper.logPersistenceUnitInformation(LogHelper.java:31)] HHH000204: Processing PersistenceUnitInfo [name: default]
+15:59:22.066 INFO  [main][Version.logVersion(Version.java:44)] HHH000412: Hibernate ORM core version 5.6.11.Final
+15:59:22.268 INFO  [main][Version.<clinit>(JavaReflectionManager.java:56)] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:59:22.410 INFO  [main][Dialect.<init>(Dialect.java:175)] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+15:59:22.665 WARN  [main][RootClass.checkCompositeIdentifier(RootClass.java:287)] HHH000038: Composite-id class does not override equals(): com.example.demo_project.entity.OrgCompanyId
+15:59:22.666 WARN  [main][RootClass.checkCompositeIdentifier(RootClass.java:290)] HHH000039: Composite-id class does not override hashCode(): com.example.demo_project.entity.OrgCompanyId
+15:59:23.025 INFO  [main][JtaPlatformInitiator.initiateService(JtaPlatformInitiator.java:52)] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:59:23.035 INFO  [main][LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:437)] Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:59:23.678 WARN  [main][JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor(JpaBaseConfiguration.java:219)] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:59:23.826 INFO  [main][PropertySourcedRequestMappingHandlerMapping.initHandlerMethods(PropertySourcedRequestMappingHandlerMapping.java:69)] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+15:59:24.084 INFO  [main][Http11NioProtocol.log(DirectJDKLog.java:173)] Starting ProtocolHandler ["http-nio-8080"]
+15:59:24.103 INFO  [main][TomcatWebServer.start(TomcatWebServer.java:220)] Tomcat started on port(s): 8080 (http) with context path ''
+15:59:24.104 INFO  [main][DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160)] Context refreshed
+15:59:24.126 INFO  [main][DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163)] Found 1 custom documentation plugin(s)
+15:59:24.148 INFO  [main][ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41)] Scanning for api listing references
+15:59:24.340 INFO  [main][CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)] Generating unique operation named: saveUsingPOST_1
+15:59:24.358 INFO  [main][DemoProjectApplication.logStarted(StartupInfoLogger.java:61)] Started DemoProjectApplication in 10.246 seconds (JVM running for 11.051)
+15:59:30.800 INFO  [http-nio-8080-exec-1][[/].log(DirectJDKLog.java:173)] Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:59:30.801 INFO  [http-nio-8080-exec-1][DispatcherServlet.initServletBean(FrameworkServlet.java:525)] Initializing Servlet 'dispatcherServlet'
+15:59:30.803 INFO  [http-nio-8080-exec-1][DispatcherServlet.initServletBean(FrameworkServlet.java:547)] Completed initialization in 2 ms
+16:03:20.150 INFO  [SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean.destroy(AbstractEntityManagerFactoryBean.java:651)] Closing JPA EntityManagerFactory for persistence unit 'default'
+16:03:20.152 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:350)] HikariPool-1 - Shutdown initiated...
+16:03:20.160 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:352)] HikariPool-1 - Shutdown completed.
+16:04:31.212 INFO  [main][DemoProjectApplication.logStarting(StartupInfoLogger.java:55)] Starting DemoProjectApplication using Java 17.0.4.1 on YuTsaide-MacBook-Pro.local with PID 1251 (/Users/yu/eclipse-workspace/demo_project/bin/main started by yu in /Users/yu/eclipse-workspace/demo_project)
+16:04:31.217 INFO  [main][DemoProjectApplication.logStartupProfileInfo(SpringApplication.java:645)] No active profile set, falling back to 1 default profile: "default"
+16:04:32.055 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:132)] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:04:32.141 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:201)] Finished Spring Data repository scanning in 73 ms. Found 8 JPA repository interfaces.
+16:04:32.740 INFO  [main][TomcatWebServer.initialize(TomcatWebServer.java:108)] Tomcat initialized with port(s): 8080 (http)
+16:04:32.755 INFO  [main][Http11NioProtocol.log(DirectJDKLog.java:173)] Initializing ProtocolHandler ["http-nio-8080"]
+16:04:32.756 INFO  [main][StandardService.log(DirectJDKLog.java:173)] Starting service [Tomcat]
+16:04:32.756 INFO  [main][StandardEngine.log(DirectJDKLog.java:173)] Starting Servlet engine: [Apache Tomcat/9.0.65]
+16:04:32.861 INFO  [main][[/].log(DirectJDKLog.java:173)] Initializing Spring embedded WebApplicationContext
+16:04:32.861 INFO  [main][ServletWebServerApplicationContext.prepareWebApplicationContext(ServletWebServerApplicationContext.java:290)] Root WebApplicationContext: initialization completed in 1569 ms
+16:04:32.955 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:110)] HikariPool-1 - Starting...
+16:04:33.125 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:123)] HikariPool-1 - Start completed.
+16:04:33.271 INFO  [main][LogHelper.logPersistenceUnitInformation(LogHelper.java:31)] HHH000204: Processing PersistenceUnitInfo [name: default]
+16:04:33.321 INFO  [main][Version.logVersion(Version.java:44)] HHH000412: Hibernate ORM core version 5.6.11.Final
+16:04:33.492 INFO  [main][Version.<clinit>(JavaReflectionManager.java:56)] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+16:04:33.600 INFO  [main][Dialect.<init>(Dialect.java:175)] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+16:04:33.831 WARN  [main][RootClass.checkCompositeIdentifier(RootClass.java:287)] HHH000038: Composite-id class does not override equals(): com.example.demo_project.entity.OrgCompanyId
+16:04:33.831 WARN  [main][RootClass.checkCompositeIdentifier(RootClass.java:290)] HHH000039: Composite-id class does not override hashCode(): com.example.demo_project.entity.OrgCompanyId
+16:04:34.182 INFO  [main][JtaPlatformInitiator.initiateService(JtaPlatformInitiator.java:52)] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:04:34.192 INFO  [main][LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:437)] Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:04:34.809 WARN  [main][JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor(JpaBaseConfiguration.java:219)] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:04:34.934 INFO  [main][PropertySourcedRequestMappingHandlerMapping.initHandlerMethods(PropertySourcedRequestMappingHandlerMapping.java:69)] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+16:04:35.150 INFO  [main][Http11NioProtocol.log(DirectJDKLog.java:173)] Starting ProtocolHandler ["http-nio-8080"]
+16:04:35.167 INFO  [main][TomcatWebServer.start(TomcatWebServer.java:220)] Tomcat started on port(s): 8080 (http) with context path ''
+16:04:35.168 INFO  [main][DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160)] Context refreshed
+16:04:35.187 INFO  [main][DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163)] Found 1 custom documentation plugin(s)
+16:04:35.207 INFO  [main][ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41)] Scanning for api listing references
+16:04:35.398 INFO  [main][CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)] Generating unique operation named: saveUsingPOST_1
+16:04:35.416 INFO  [main][DemoProjectApplication.logStarted(StartupInfoLogger.java:61)] Started DemoProjectApplication in 9.63 seconds (JVM running for 10.432)
+16:04:41.188 INFO  [http-nio-8080-exec-1][[/].log(DirectJDKLog.java:173)] Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:04:41.188 INFO  [http-nio-8080-exec-1][DispatcherServlet.initServletBean(FrameworkServlet.java:525)] Initializing Servlet 'dispatcherServlet'
+16:04:41.190 INFO  [http-nio-8080-exec-1][DispatcherServlet.initServletBean(FrameworkServlet.java:547)] Completed initialization in 2 ms
+16:41:11.801 WARN  [HikariPool-1 housekeeper][HikariPool.run(HikariPool.java:788)] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m8s335ms).
+17:06:57.395 WARN  [HikariPool-1 housekeeper][HikariPool.run(HikariPool.java:788)] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m45s384ms).
+17:09:12.555 WARN  [HikariPool-1 housekeeper][HikariPool.run(HikariPool.java:788)] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m45s153ms).
+17:20:57.013 WARN  [HikariPool-1 housekeeper][HikariPool.run(HikariPool.java:788)] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m44s458ms).
+17:36:26.884 INFO  [SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean.destroy(AbstractEntityManagerFactoryBean.java:651)] Closing JPA EntityManagerFactory for persistence unit 'default'
+17:36:26.888 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:350)] HikariPool-1 - Shutdown initiated...
+17:36:26.891 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:352)] HikariPool-1 - Shutdown completed.
+17:36:39.780 INFO  [main][DemoProjectApplication.logStarting(StartupInfoLogger.java:55)] Starting DemoProjectApplication using Java 17.0.4.1 on YuTsaide-MacBook-Pro.local with PID 1411 (/Users/yu/eclipse-workspace/demo_project/bin/main started by yu in /Users/yu/eclipse-workspace/demo_project)
+17:36:39.784 INFO  [main][DemoProjectApplication.logStartupProfileInfo(SpringApplication.java:645)] No active profile set, falling back to 1 default profile: "default"
+17:36:40.798 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:132)] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+17:36:40.894 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:201)] Finished Spring Data repository scanning in 82 ms. Found 8 JPA repository interfaces.
+17:36:41.559 INFO  [main][TomcatWebServer.initialize(TomcatWebServer.java:108)] Tomcat initialized with port(s): 8080 (http)
+17:36:41.574 INFO  [main][Http11NioProtocol.log(DirectJDKLog.java:173)] Initializing ProtocolHandler ["http-nio-8080"]
+17:36:41.575 INFO  [main][StandardService.log(DirectJDKLog.java:173)] Starting service [Tomcat]
+17:36:41.575 INFO  [main][StandardEngine.log(DirectJDKLog.java:173)] Starting Servlet engine: [Apache Tomcat/9.0.65]
+17:36:41.705 INFO  [main][[/].log(DirectJDKLog.java:173)] Initializing Spring embedded WebApplicationContext
+17:36:41.706 INFO  [main][ServletWebServerApplicationContext.prepareWebApplicationContext(ServletWebServerApplicationContext.java:290)] Root WebApplicationContext: initialization completed in 1822 ms
+17:36:41.813 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:110)] HikariPool-1 - Starting...
+17:36:42.001 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:123)] HikariPool-1 - Start completed.
+17:36:42.146 INFO  [main][LogHelper.logPersistenceUnitInformation(LogHelper.java:31)] HHH000204: Processing PersistenceUnitInfo [name: default]
+17:36:42.195 INFO  [main][Version.logVersion(Version.java:44)] HHH000412: Hibernate ORM core version 5.6.11.Final
+17:36:42.414 INFO  [main][Version.<clinit>(JavaReflectionManager.java:56)] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+17:36:42.532 INFO  [main][Dialect.<init>(Dialect.java:175)] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+17:36:42.745 WARN  [main][RootClass.checkCompositeIdentifier(RootClass.java:287)] HHH000038: Composite-id class does not override equals(): com.example.demo_project.entity.OrgCompanyId
+17:36:42.746 WARN  [main][RootClass.checkCompositeIdentifier(RootClass.java:290)] HHH000039: Composite-id class does not override hashCode(): com.example.demo_project.entity.OrgCompanyId
+17:36:43.083 INFO  [main][JtaPlatformInitiator.initiateService(JtaPlatformInitiator.java:52)] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+17:36:43.094 INFO  [main][LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:437)] Initialized JPA EntityManagerFactory for persistence unit 'default'
+17:36:43.743 WARN  [main][JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor(JpaBaseConfiguration.java:219)] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+17:36:43.883 INFO  [main][PropertySourcedRequestMappingHandlerMapping.initHandlerMethods(PropertySourcedRequestMappingHandlerMapping.java:69)] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+17:36:44.145 INFO  [main][Http11NioProtocol.log(DirectJDKLog.java:173)] Starting ProtocolHandler ["http-nio-8080"]
+17:36:44.170 INFO  [main][TomcatWebServer.start(TomcatWebServer.java:220)] Tomcat started on port(s): 8080 (http) with context path ''
+17:36:44.171 INFO  [main][DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160)] Context refreshed
+17:36:44.190 INFO  [main][DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163)] Found 1 custom documentation plugin(s)
+17:36:44.209 INFO  [main][ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41)] Scanning for api listing references
+17:36:44.378 INFO  [main][CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)] Generating unique operation named: saveUsingPOST_1
+17:36:44.395 INFO  [main][DemoProjectApplication.logStarted(StartupInfoLogger.java:61)] Started DemoProjectApplication in 10.09 seconds (JVM running for 10.853)
+17:40:29.252 INFO  [http-nio-8080-exec-1][[/].log(DirectJDKLog.java:173)] Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:40:29.253 INFO  [http-nio-8080-exec-1][DispatcherServlet.initServletBean(FrameworkServlet.java:525)] Initializing Servlet 'dispatcherServlet'
+17:40:29.256 INFO  [http-nio-8080-exec-1][DispatcherServlet.initServletBean(FrameworkServlet.java:547)] Completed initialization in 2 ms
+17:47:02.721 WARN  [HikariPool-1 housekeeper][HikariPool.run(HikariPool.java:788)] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m50s588ms).
+17:56:44.439 INFO  [SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean.destroy(AbstractEntityManagerFactoryBean.java:651)] Closing JPA EntityManagerFactory for persistence unit 'default'
+17:56:44.442 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:350)] HikariPool-1 - Shutdown initiated...
+17:56:44.452 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:352)] HikariPool-1 - Shutdown completed.

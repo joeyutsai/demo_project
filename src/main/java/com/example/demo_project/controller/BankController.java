@@ -17,88 +17,43 @@ import com.example.demo_project.vo.BankWithdrawRes;
 
 @RestController
 public class BankController {
-//	//Homework_1018
-
 	@Autowired
 	private BankService bankService;
-
-	@PostMapping(value = "/api/getAmount")
-	public BankRes getAmount(@RequestBody BankReq request) {
-		BankRes res = new BankRes();
-		if (!StringUtils.hasText(request.getAccount())) {
-			res.setMessage("Account is empty!!");
-			return res;
-		}
-		Bank bank = bankService.getAmount(request.getAccount());
-//		res.setBank(bank);
-
-		return res;
-	}
-
-	@PostMapping(value = "/api/deposit") // API
-	public BankDepositRes deposit(@RequestBody BankDepositReq depositReq) {
-		BankDepositRes res = new BankDepositRes();
-
-		if (!StringUtils.hasText(depositReq.getAccount())) {
-			res.setMessage("Account is empty!");
-			return res;
-		}
-
-		if (depositReq.getAmount() < 0) {
-			res.setMessage("Amount is negative!");
-			return res;
-		}
-
-		Bank bank = bankService.deposit(depositReq.getAccount(), depositReq.getAmount());
-		res.setAccount(bank.getAccount());
-		res.setAmount(bank.getAmount());
-		res.setMessage("Successful!!");
-		return res;
-	}
 	
-	@PostMapping(value = "/api/withdraw") 
-	public BankWithdrawRes withdraw(@RequestBody BankWithdrawReq withdrawReq) {
-		BankRes result = bankService.withdraw(withdrawReq.getAccount(), withdrawReq.getAmount());
-		BankWithdrawRes res = new BankWithdrawRes();
-		if (!StringUtils.hasText(withdrawReq.getAccount())) {
-			res.setMessage("Account is empty!");
-			return res;
-		}
-		if (withdrawReq.getAmount() < 0 || withdrawReq.getAmount() < 0) {
-
-		}
-//		res.setAccount(result.getAccount()); //???
-		res.setAmount(result.getAmount());
-		res.setMessage(result.getMessage());
-		return res;
+	// 存款，執行後回傳帳號、餘額、訊息。防呆：1. 帳號不得為 null或空 2. 存入金額不能小於0
+	@PostMapping(value = "/api/depositRes")
+	public BankRes depositRes(@RequestBody BankReq req) {
+		return bankService.depositRes(req.getAccount(), req.getAmount());
 	}
 
-//	//classroom_1018
-//	@Autowired
-//	private BankService bankService;
-//
-//	@PostMapping(value = "/api/getAmount")
-//	public BankRes getAmount(@RequestBody BankReq request) {
-//		BankRes res = new BankRes();
+	// 建立帳號，餘額預設為0。防呆：無法建立相同帳號。
+	@PostMapping(value = "/api/creatAccount")
+	public Bank creatAccount(@RequestBody BankReq req) {
+		return bankService.creatAccount(req.getAccount());
+	}
 
-	// method_1
-//		String account = request.getAccount();
-//		if (account == null || account.isEmpty() || account == " ") {
-//			res.setMessage("Account is empty!!");
-//			return res;
-//		}
+	// 取得餘額，執行後回傳帳號、餘額、訊息。
+	@PostMapping(value = "/api/getAccount")
+	public Bank getAccount(@RequestBody BankReq req) {
+		return bankService.getAmount(req.getAccount());
 
-	// method_2
-//		if (!StringUtils.hasText(request.getAccount())) {
-//			res.setMessage("Account is empty!!");
-//			return res;
-//		}
-//		
-	// ==========
-//		Bank bank = bankService.getAmount(request.getAccount());
-//		res.setAccount(bank.getAccount());
-//		res.setAmount(bank.getAmount());
-//		res.setMessage("Success");
-//		return res;
-//	}
+	}
+		
+	// 提款，執行後回傳帳號、餘額、訊息。防呆：1. 帳號不得為 null 或空 2. 提款金額不能小於0或大於存款金額
+	@PostMapping(value = "/api/withdraw")
+	public Bank withdraw(@RequestBody BankReq req) {
+		return bankService.withdraw(req.getAccount(), req.getAmount());
+	}
+
+	// 刪除帳號。
+		@PostMapping(value = "/api/deleteAccount")
+		public BankRes deleteAccount(@RequestBody BankReq req) {
+			bankService.deleteAccount(req.getAccount());
+			return new BankRes();
+		}
+		
+		@PostMapping(value = "/api/deleteByName")
+		public void deleteByName(@RequestBody BankReq req) {
+			bankService.deleteByName(req.getName());
+		}
 }

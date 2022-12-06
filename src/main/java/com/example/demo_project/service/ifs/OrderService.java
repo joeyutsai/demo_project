@@ -10,21 +10,28 @@ import com.example.demo_project.vo.OrderReq;
 import com.example.demo_project.vo.OrderRes;
 
 public interface OrderService {
-	public void setMenuNamePrice(String singleMenu, int singlePriceMenu);
-	public void orderMenu(String menu, int quantity);
-	public void getAllPrice();
+	//START homework_1025
+	public OrderRes addMenu(String menu, int price);
+	public void getAllMenu();
+	public void getMenu(String menu);
+	public OrderRes orderMenu(List<OrderReq> orderList);
+	//END homework_1025
+
 	
-	//classroomPractice_1019
-	public OrderRes getTestMenu(OrderReq request);
-	public OrderRes getTestPrice(OrderReq request);
-	
-	// * class_1020
-//	public Map<String, Integer> getMenus = new HashMap<String, Integer>();
-	public List<Menu> tgetMenu();
-	public Menu ttgetMenu(String name);
-	public Order torderMenu();
-	public Order torderMenu(List<Menu> menuList);
-	// * 1020class_1020
-	
+//	public void setMenuNamePrice(String singleMenu, int singlePriceMenu);
+//	public void orderMenu(String menu, int quantity);
+//	public void getAllPrice();
+//	
+//	//classroomPractice_1019
+//	public OrderRes getTestMenu(OrderReq request);
+//	public OrderRes getTestPrice(OrderReq request);
+//	
+//	// * class_1020
+////	public Map<String, Integer> getMenus = new HashMap<String, Integer>();
+//	public List<Menu> tgetMenu();
+//	public Menu ttgetMenu(String name);
+//	public Order torderMenu();
+//	public Order torderMenu(List<Menu> menuList);
+//	// * 1020class_1020
 
 }

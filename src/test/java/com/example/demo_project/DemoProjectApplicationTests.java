@@ -1,5 +1,8 @@
 package com.example.demo_project;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,10 +20,75 @@ import com.example.demo_project.service.impl.Bird1;
 import com.example.demo_project.service.impl.BirdServiceImpl;
 import com.example.demo_project.service.impl.Cat;
 
-@SpringBootTest
+//@SpringBootTest
 class DemoProjectApplicationTests {
-	
-	
+
+	// START 11/25 Fri Leetcode https://leetcode.com/problems/two-sum/
+	@Test
+	public void twoSum(int[] nums, int target) {
+		for (int i = 0; i < nums.length - 1; i++) {
+
+			for (int j = i + 1; j < nums.length; j++) {
+				int checkNum = nums[i] + nums[j];
+				if (checkNum == target) {
+					System.out.println("[" + i + "," + j + "]");
+				}
+			}
+
+		}
+	}
+
+	@Test
+	public void twoSum2(int[] nums, int target) {
+		Map<Integer, Integer> map = new HashMap<>();
+
+		for (int i = 0; i < nums.length; i++) {
+			map.put(i, nums[i]);
+
+		}
+
+		for (Map.Entry m : map.entrySet()) {
+
+		}
+
+	}
+
+	@Test
+	public int[] twoSumTeacher(int[] nums, int target) {
+		int count = 0;
+		Map<Integer, Integer> map = new HashMap<>();
+
+		for (int i = 0; i < nums.length; i++) {
+			count++;
+			int complement = target - nums[i];
+			if(map.containsKey(complement)) {
+				System.out.print("Count: " + count);
+				return new int[] {map.get(complement), i};
+			}
+			map.put(nums[i], i);
+		}
+
+		return null;
+
+	}
+
+	@Test
+	public void twoSumTest() {
+//		int[] nums = { 2, 7, 11, 15 };
+//		int target = 9;
+
+		int[] nums = { 3, 2, 4 };
+		int target = 6;
+
+//		int[] nums = { 3, 3 };
+//		int target = 6;
+
+//		twoSum(nums, target);
+		twoSumTeacher(nums, target);
+	}
+	// END 11/25 Fri 
+
+
 //	// Homework_1011
 //	@Autowired
 //	private BankService bankService;
@@ -37,7 +105,7 @@ class DemoProjectApplicationTests {
 //		System.out.println();
 //		bankService.withdraw(tomBank, 5000);
 //	}
-	
+
 //	// 1010 classroom
 //	@Test
 //	public void animoveTest() {
@@ -55,8 +123,7 @@ class DemoProjectApplicationTests {
 //		anim.animove(birdd);
 //		anim.animove(catt);	
 //	}
-	
-	
+
 //	@Autowired
 //	private OrderService2 orderService2Test;
 //	@Test
@@ -78,9 +145,7 @@ class DemoProjectApplicationTests {
 //		// get all info
 //		orderService2Test.getAllInfo();
 //	}
-	
-	
-	
+
 //// 1007 Homework
 //	@Autowired
 //	private OrderService orderServiceTest;
@@ -107,9 +172,7 @@ class DemoProjectApplicationTests {
 ////	     get all menu price
 //		orderServiceTest.getAllPrice();
 //	}
-	
-	
-	
+
 	// 1007 classroom
 //	@Qualifier("A1") //hot code
 //	@Autowired
@@ -118,10 +181,10 @@ class DemoProjectApplicationTests {
 //	public void activeTest() {
 //		activeTest.printFly(activeTest.fly("Alice", 8));
 //	}
-	
+
 //	@Test
 //	void contextLoads() {
 //		
 //	}
-	
+
 }
