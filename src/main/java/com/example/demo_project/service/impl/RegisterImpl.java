@@ -138,7 +138,14 @@ public class RegisterImpl implements RegisterService {
 
 	@Scheduled(fixedRateString = "${heartbeat.ms}")
 	public void schedulePrintDate() {
-		System.out.println("--> RegisterImpl1: " + new Date());
+//		System.out.println("--> RegisterImpl1: " + new Date());
+	}
+
+	@Override
+	public Register findById(String id) {
+		Optional<Register> op = registerDao.findById(id);
+
+		return op.orElse(null);
 	}
 
 }

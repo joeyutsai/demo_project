@@ -5,23 +5,38 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class RegisterRes {
+
 	@JsonInclude(JsonInclude.Include.NON_NULL)
 	@JsonProperty("register_info")
 	private Register register;
-	
+
 	private String message;
+
+	@JsonProperty("verify_code")
+	private int verifyCode;
 
 	public RegisterRes() {
 
 	}
-	
+
 	public RegisterRes(String message) {
 		this.message = message;
 	}
-	
-	public RegisterRes(Register register,String message) {
+
+	public RegisterRes(String message, int verifyCode) {
+		this.message = message;
+		this.verifyCode = verifyCode;
+	}
+
+	public RegisterRes(Register register, String message) {
 		this.register = register;
 		this.message = message;
+	}
+
+	public RegisterRes(Register register, String message, int verifyCode) {
+		this.register = register;
+		this.message = message;
+		this.verifyCode = verifyCode;
 	}
 
 	public String getMessage() {
@@ -39,5 +54,13 @@ public class RegisterRes {
 	public void setRegister(Register register) {
 		this.register = register;
 	}
-	
+
+	public int getVerifyCode() {
+		return verifyCode;
+	}
+
+	public void setVerifyCode(int verifyCode) {
+		this.verifyCode = verifyCode;
+	}
+
 }

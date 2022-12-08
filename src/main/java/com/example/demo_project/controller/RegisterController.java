@@ -1,5 +1,7 @@
 package com.example.demo_project.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
@@ -10,8 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo_project.constants.RegisterRtnCode;
 import com.example.demo_project.entity.Register;
 import com.example.demo_project.service.ifs.RegisterService;
+import com.example.demo_project.vo.ActiveAccountReq;
 import com.example.demo_project.vo.AddRoleListReq;
 import com.example.demo_project.vo.AddRoleSetReq;
+import com.example.demo_project.vo.LoginInfo;
 import com.example.demo_project.vo.RegisterReq;
 import com.example.demo_project.vo.RegisterRes;
 
@@ -19,8 +23,27 @@ import com.example.demo_project.vo.RegisterRes;
 public class RegisterController {
 	@Autowired
 	private RegisterService registerService;
-	
-	@PostMapping(value="/api/add_role_set")
+
+	@PostMapping(value = "/api/active_account2")
+	public RegisterRes activeAccount2(@RequestBody ActiveAccountReq req, HttpSession httpSession) {
+
+		Object sessionUserVerifyCode = httpSession.getAttribute("user_verify_code");
+
+		if (!StringUtils.hasText(req.getAccount()) || req.getVerifyCode() == 0) {
+			return new RegisterRes("Please enter account or verify code.");
+		}
+
+		if (sessionUserVerifyCode == null) {
+			return new RegisterRes("HTTP Session user verify code is empty.");
+		} else if (req.getVerifyCode() == (int) sessionUserVerifyCode) {
+			registerService.activeAccount(req.getAccount());
+			return new RegisterRes("Successfully. Verify code is correct. Account actived.", req.getVerifyCode());
+		}
+		
+		return new RegisterRes("Error. Verify code is not correct.");
+	}
+
+	@PostMapping(value = "/api/add_role_set")
 	public RegisterRes addRoleSet(@RequestBody AddRoleSetReq req) {
 		if (!StringUtils.hasText(req.getAccount())) {
 			return new RegisterRes(RegisterRtnCode.ACCOUNT_REQUIRED.getMessage());
@@ -31,13 +54,12 @@ public class RegisterController {
 //		if(CollectionUtils.is) {
 //			
 //		}
-	
+
 		return registerService.addRoleSet(req.getAccount(), req.getRoleSet());
-		
+
 	}
-	
-	
-	@PostMapping(value="/api/add_role_list")
+
+	@PostMapping(value = "/api/add_role_list")
 	public RegisterRes addRoleList(@RequestBody AddRoleListReq req) {
 		if (!StringUtils.hasText(req.getAccount())) {
 			return new RegisterRes(RegisterRtnCode.ACCOUNT_REQUIRED.getMessage());
@@ -45,21 +67,13 @@ public class RegisterController {
 		if (req.getRoleList().isEmpty()) {
 			return new RegisterRes(RegisterRtnCode.ROLE_LIST_IS_EMPTY.getMessage());
 		}
-		
-		return registerService.addRole(req.getAccount(), req.getRoleList());
-		
-	}
 
-	@PostMapping(value = "/api/active_account")
-	public RegisterRes activeAccount(@RequestBody RegisterReq req) {
-		if (!StringUtils.hasText(req.getAccount())) {
-			return new RegisterRes(RegisterRtnCode.ACCOUNT_REQUIRED.getMessage());
-		}
-		return registerService.activeAccount(req.getAccount());
+		return registerService.addRole(req.getAccount(), req.getRoleList());
+
 	}
 
 	@PostMapping(value = "/api/register")
-	public RegisterRes register(@RequestBody RegisterReq req) {
+	public RegisterRes register(@RequestBody RegisterReq req, HttpSession httpSession) {
 
 		RegisterRes checkResult = checkParam(req);
 		if (checkResult != null) {
@@ -73,8 +87,27 @@ public class RegisterController {
 			return new RegisterRes(RegisterRtnCode.ACCOUNT_EXISTED.getMessage());
 		}
 
-		return new RegisterRes(reg, RegisterRtnCode.SUCCESSFUL.getMessage());
+		// Practice1208: produce verify code and add verify code into httpSession
+		// START
 
+		// produce random digits (less then four digits)
+		int verifyCode = 0;
+
+		while (verifyCode == 0) {
+			verifyCode = produceRandomVerifyCode();
+		}
+
+		// add verify code into httpSession
+		httpSession.setAttribute("user_verify_code", verifyCode);
+
+		// add user account into httpSession
+		httpSession.setAttribute("user_account", req.getAccount());
+		
+		httpSession.setMaxInactiveInterval(10);
+
+		// END
+
+		return new RegisterRes(reg, RegisterRtnCode.SUCCESSFUL.getMessage(), verifyCode);
 	}
 
 	@PostMapping(value = "/api/register2")
@@ -86,6 +119,50 @@ public class RegisterController {
 		res.setMessage("Register successfully.");
 		return res;
 
+	}
+
+	@PostMapping(value = "/api/active_account")
+	public RegisterRes activeAccount(@RequestBody RegisterReq req) {
+		if (!StringUtils.hasText(req.getAccount())) {
+			return new RegisterRes(RegisterRtnCode.ACCOUNT_REQUIRED.getMessage());
+		}
+		return registerService.activeAccount(req.getAccount());
+	}
+
+	@PostMapping(value = "/api/login")
+	public RegisterRes login(@RequestBody LoginInfo loginInfo, HttpSession httpSession) {
+		if (!StringUtils.hasText(loginInfo.getAccount()) || !StringUtils.hasText(loginInfo.getPwd())) {
+			return new RegisterRes("Parameter is error.");
+		}
+
+		Register result = registerService.findById(loginInfo.getAccount());
+		if (result == null) {
+			return new RegisterRes("UserInfo not found.");
+		}
+
+		httpSession.setAttribute("user_account", result.getAccount());
+		httpSession.setMaxInactiveInterval(20);
+
+		return new RegisterRes(result, "Login successfully.");
+	}
+
+	@PostMapping(value = "/api/logout")
+	public RegisterRes logout(HttpSession httpSession) {
+		httpSession.removeAttribute("user_account");
+		return new RegisterRes("Logout successfully.");
+	}
+
+	@PostMapping(value = "/api/get_user_info")
+	public RegisterRes getUserInfo(HttpSession httpSession) {
+		Object attValue = httpSession.getAttribute("user_account");
+
+		if (attValue != null) {
+			String account = attValue.toString();
+			Register result = registerService.findById(account);
+			return new RegisterRes(result, "Get user info successfully.");
+		}
+
+		return new RegisterRes("User info is empty.");
 	}
 
 	private RegisterRes checkParam(RegisterReq req) {
@@ -106,5 +183,11 @@ public class RegisterController {
 //		}
 //		return null;
 //	}
+
+	public int produceRandomVerifyCode() {
+		double random = Math.random() * 10000;
+		int verifyCode = (int) Math.round(random);
+		return verifyCode;
+	}
 
 }

@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.example.demo_project.entity.Register;
 import com.example.demo_project.repository.RegisterDao;
+import com.example.demo_project.service.ifs.RegisterService;
 
 @SpringBootTest
 public class RegisterTest {
@@ -24,4 +25,5 @@ public class RegisterTest {
 		List<Register> result = registerDao.doQueryByExpiredRegTime(date);
 		System.out.println("--> Result size: " + result.size());
 	}
+
 }
