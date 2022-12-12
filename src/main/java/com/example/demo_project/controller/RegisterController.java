@@ -2,6 +2,8 @@ package com.example.demo_project.controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
@@ -21,6 +23,9 @@ import com.example.demo_project.vo.RegisterRes;
 
 @RestController
 public class RegisterController {
+
+	private Logger logger = LoggerFactory.getLogger(getClass());
+
 	@Autowired
 	private RegisterService registerService;
 
@@ -39,7 +44,7 @@ public class RegisterController {
 			registerService.activeAccount(req.getAccount());
 			return new RegisterRes("Successfully. Verify code is correct. Account actived.", req.getVerifyCode());
 		}
-		
+
 		return new RegisterRes("Error. Verify code is not correct.");
 	}
 
@@ -102,8 +107,9 @@ public class RegisterController {
 
 		// add user account into httpSession
 		httpSession.setAttribute("user_account", req.getAccount());
-		
-		httpSession.setMaxInactiveInterval(10);
+
+		// set httpSession time
+//		httpSession.setMaxInactiveInterval(10);
 
 		// END
 

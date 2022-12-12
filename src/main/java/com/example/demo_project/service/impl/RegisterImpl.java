@@ -136,16 +136,26 @@ public class RegisterImpl implements RegisterService {
 
 	}
 
-	@Scheduled(fixedRateString = "${heartbeat.ms}")
-	public void schedulePrintDate() {
-//		System.out.println("--> RegisterImpl1: " + new Date());
-	}
+//	@Scheduled(fixedRateString = "${heartbeat.ms}")
+//	public void schedulePrintDate() {
+//		System.out.println("--> RegisterImpl schedulePrintDate():" + new Date());
+//	}
 
 	@Override
 	public Register findById(String id) {
 		Optional<Register> op = registerDao.findById(id);
-
 		return op.orElse(null);
+	}
+
+	@Override
+	public List<Register> findAll() {
+		// 跑afterThrowing
+		// 除數不得為零
+//		int a = 5 / 0;
+
+		System.out.println("--> RegisterIMPL findAll() ");
+		List<Register> op = registerDao.findAll();
+		return op;
 	}
 
 }

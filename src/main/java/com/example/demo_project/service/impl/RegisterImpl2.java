@@ -135,14 +135,20 @@ public class RegisterImpl2 implements RegisterService {
 	
 	}
 
-	@Scheduled(fixedRateString = "${heartbeat.ms}")
-	public void schedulePrintDate() {
+//	@Scheduled(fixedRateString = "${heartbeat.ms}")
+//	public void schedulePrintDate() {
 //		System.out.println("--> RegisterImpl2");
 //		System.out.println(new Date());
-	}
+//	}
 
 	@Override
 	public Register findById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Register> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
