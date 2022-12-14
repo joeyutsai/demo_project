@@ -19,15 +19,22 @@ dependencies {
 	// data-jpa
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.4'
 	
-	// mysql connector
+	// mySQL connector
 	implementation 'mysql:mysql-connector-java:8.0.31'
 	
-	//swagger api
+	// Swagger API
 	implementation 'io.springfox:springfox-swagger2:2.9.2'
 	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
 	
 	// AOP
-	implementation 'org.springframework.boot:spring-boot-starter-aop'	
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
+	
+	// Thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	
+	// Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+		
 }
 
 tasks.named('test') {
