@@ -14,4 +14,11 @@ public class DemoThymeleafController {
 		model.addAttribute("name", name);
 		return "hello.html";
 	}
+	
+	@RequestMapping(value = "/hello2")
+	public String hello2(@RequestParam(name = "name", required = false, defaultValue = "World") String name,
+			Model model) {
+		model.addAttribute("name", name);
+		return "hello2.html";
+	}
 }
