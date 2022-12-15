@@ -42,5 +42,4 @@ public class WebMvcConfig {
 		corsConfiguration.setAllowCredentials(true);
 		return corsConfiguration;
 	}
-
 }
